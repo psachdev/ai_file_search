@@ -1,0 +1,9 @@
+import requests
+
+DEEPSEEK_API_KEY = "<DEEPSEEK_API_KEY>"
+response = requests.post(
+    "https://api.deepseek.com/v1/chat/completions",
+    headers={"Authorization": f"Bearer {DEEPSEEK_API_KEY}"},
+    json={"model": "deepseek-chat", "messages": [{"role": "user", "content": "Hello"}]}
+)
+print(response.status_code, response.json())
